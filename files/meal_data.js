@@ -5,7 +5,7 @@ const soups = [
         price: 7,
         desc: 'Для первого визита — идеально.',
         category: 'soup',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/warm.jpg',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/warm.jpg',
         kind: '0cent',
     },
     {
@@ -14,7 +14,7 @@ const soups = [
         price: 10,
         desc: 'Наестся и тот, у кого нет желудка.',
         category: 'soup',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/seven houses.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/seven houses.png',
         kind: '40cent',
     },
     {
@@ -23,7 +23,7 @@ const soups = [
         price: 5,
         desc: 'Согревает даже сквозь временные сдвиги.',
         category: 'soup',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/helloween.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/helloween.png',
         kind: '0cent',
     },
     {
@@ -32,7 +32,7 @@ const soups = [
         price: 11,
         desc: 'Тоже из времён, когда суп варили в ямах.',
         category: 'soup',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/soup4.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/soup4.png',
         kind: '40cent',
     },
     {
@@ -41,7 +41,7 @@ const soups = [
         price: 15,
         desc: 'Любим в тех столетиях, где еда — просто код.',
         category: 'soup',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/soup5.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/soup5.png',
         kind: '130cent',
     },
     {
@@ -50,7 +50,7 @@ const soups = [
         price: 8,
         desc: 'Подойдет ностальгирующему пришельцу.',
         category: 'soup',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/soup6.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/soup6.png',
         kind: '130cent',
     }
 ]
@@ -62,7 +62,7 @@ const meals = [
         price: 6,
         desc: 'Как будто откуда-то из дома, даже если дома нет.',
         category: 'meal',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dish1.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dish1.png',
         kind: 'meat',
     },
     {
@@ -71,7 +71,7 @@ const meals = [
         price: 9,
         desc: 'Плов, который собрал лучшее со всех дорог.',
         category: 'meal',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dish2.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dish2.png',
         kind: 'meat',
     },
     {
@@ -80,7 +80,7 @@ const meals = [
         price: 8,
         desc: 'Тепло для усталых путешественников.',
         category: 'meal',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dish3.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dish3.png',
         kind: 'vegetarian',
     },
     {
@@ -89,7 +89,7 @@ const meals = [
         price: 12,
         desc: 'Будто всё лето впиталось в ложку.',
         category: 'meal',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dish4.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dish4.png',
         kind: 'vegetarian',
     },
     {
@@ -98,7 +98,7 @@ const meals = [
         price: 20,
         desc: 'Оно просто есть. Никто не спрашивает, откуда оно.',
         category: 'meal',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dish5.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dish5.png',
         kind: 'cannibal',
     },
     {
@@ -107,7 +107,7 @@ const meals = [
         price: 14,
         desc: 'Слишком вежлив, чтобы отказаться. Слишком вкусен, чтобы забыть.',
         category: 'cannibal',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dish6.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dish6.png',
         kind: 'cannibal',
     }
 ]
@@ -119,7 +119,7 @@ const drinks = [
         price: 8,
         desc: 'Медовый напиток с травами.',
         category: 'drink',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/drink1.jpg',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/drink1.jpg',
         kind: 'sober',
     },
     {
@@ -128,7 +128,7 @@ const drinks = [
         price: 11,
         desc: 'Его пили до первой мировой и после третьей.',
         category: 'drink',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/drink2.jpg',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/drink2.jpg',
         kind: 'alcohol'
     },
     {
@@ -137,7 +137,7 @@ const drinks = [
         price: 4,
         desc: 'Ты поймёшь, как только попробуешь.',
         category: 'drink',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/drink3.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/drink3.png',
         kind: 'sober',
     },
     {
@@ -146,7 +146,7 @@ const drinks = [
         price: 7,
         desc: 'Без градуса, но с эффектом.',
         category: 'drink',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/drink4.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/drink4.png',
         kind: 'sober',
     },
     {
@@ -155,7 +155,7 @@ const drinks = [
         price: 12,
         desc: 'Вкус прошлого, горечи, но с теплом.',
         category: 'drink',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/drink5.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/drink5.png',
         kind: 'alcohol',
     },
     {
@@ -164,7 +164,7 @@ const drinks = [
         price: 17,
         desc: 'Не столько пьёшь, сколько вспоминаешь, как это было.',
         category: 'drink',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/drink6.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/drink6.png',
         kind: 'alcohol',
     },
 ];
@@ -176,7 +176,7 @@ const salads = [
         price: 3,
         desc: 'Греет, как трение в атмосфере.',
         category: 'salad',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/salad1.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/salad1.png',
         kind: 'mega',
     },
     {
@@ -185,7 +185,7 @@ const salads = [
         price: 1,
         desc: 'Вкус раскрывается при колебаниях.',
         category: 'salad',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/salad2.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/salad2.png',
         kind: 'micro',
     },
     {
@@ -194,7 +194,7 @@ const salads = [
         price: 2,
         desc: 'Хрустит, пахнет теплом земли.',
         category: 'salad',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/salad3.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/salad3.png',
         kind: 'macro',
     },
     {
@@ -203,7 +203,7 @@ const salads = [
         price: 4,
         desc: 'Светится в темноте, но съедобен.',
         category: 'salad',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/salad4.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/salad4.png',
         kind: 'macro',
     },
     {
@@ -212,7 +212,7 @@ const salads = [
         price: 3,
         desc: 'Нежный, будто дожди в мае.',
         category: 'salad',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/salad5.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/salad5.png',
         kind: 'macro',
     },
     {
@@ -221,7 +221,7 @@ const salads = [
         price: 6,
         desc: 'Из всего, что можно найти.',
         category: 'salad',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/salad6.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/salad6.png',
         kind: 'macro',
     },
 ]
@@ -233,7 +233,7 @@ const desserts = [
         price: 9,
         desc: 'После него внутри идёт снег.',
         category: 'dessert',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dessert1.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dessert1.png',
         kind: 'cold',
     },
     {
@@ -242,7 +242,7 @@ const desserts = [
         price: 5,
         desc: 'Как пирог, только легче воздуха.',
         category: 'dessert',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dessert2.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dessert2.png',
         kind: 'classic',
     },
     {
@@ -251,7 +251,7 @@ const desserts = [
         price: 6,
         desc: 'Хрустит, как вечер на крыльце.',
         category: 'dessert',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dessert3.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dessert3.png',
         kind: 'classic',
     },
     {
@@ -260,7 +260,7 @@ const desserts = [
         price: 8,
         desc: 'Хрустит, тает, кислит, жжёт — по кругу.',
         category: 'dessert',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dessert4.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dessert4.png',
         kind: 'odd',
     },
     {
@@ -269,7 +269,7 @@ const desserts = [
         price: 7,
         desc: 'Их едят, а они глядят.',
         category: 'dessert',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dessert5.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dessert5.png',
         kind: 'odd',
     },
     {
@@ -278,7 +278,7 @@ const desserts = [
         price: 7,
         desc: 'Тонкая, хрустит, сладость приходит с опозданием.',
         category: 'dessert',
-        img: 'https://a-e-skald.github.io/progalina-web/order/dishes/dessert6.png',
+        img: 'https://a-e-skald.github.io/progalina-web/dishes/dessert6.png',
         kind: 'odd',
     },
 ]
