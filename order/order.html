@@ -8,27 +8,27 @@
 
     <script>
         function chooseSoup(value) {
-            event.preventDefault();
+            event.preventDefault(); document.getElementsByClassName('bottom-banner')[0].style.display = 'flex';
             document.getElementById('soup').value = value;
             calculateTotal();
         }
         function chooseMeal(value) {
-            event.preventDefault();
+            event.preventDefault(); document.getElementsByClassName('bottom-banner')[0].style.display = 'flex';
             document.getElementById('meal').value = value;
             calculateTotal();
         }
         function chooseDrink(value) {
-            event.preventDefault();
+            event.preventDefault(); document.getElementsByClassName('bottom-banner')[0].style.display = 'flex';
             document.getElementById('drink').value = value;
             calculateTotal();
         }
         function chooseSalad(value) {
-            event.preventDefault();
+            event.preventDefault(); document.getElementsByClassName('bottom-banner')[0].style.display = 'flex';
             document.getElementById('salad').value = value;
             calculateTotal();
         }
         function chooseDessert(value) {
-            event.preventDefault();
+            event.preventDefault(); document.getElementsByClassName('bottom-banner')[0].style.display = 'flex';
             document.getElementById('dessert').value = value;
             calculateTotal();
         }
@@ -41,9 +41,9 @@
     <header>
         <a class = "a-nostyle" href="../header.html"><h1>Прогалина</h1></a>
         <nav>
-            <a class = "a-nostyle" style="color:rgb(227, 173, 112)" href=" ">Заказать</a>
-            <a class = "a-nostyle" href=" ">Местоположение</a>
-            <a class = "a-nostyle" href=" ">Контакты</a>
+            <a class = "a-nostyle" style="color:rgb(227, 173, 112)" href="/order/order.html">Собрать трапезу</a>
+            <a class = "a-nostyle" href="/order/form order.html">Оформить заказ</a>
+            <a class = "a-nostyle" href=" ">Заказы</a>
         </nav>
     </header>
     <main>
@@ -198,111 +198,9 @@
                 
             </div>
         </section>
-        
     </main>
 
-    <!-- форма -->
 
-    <form class = "form-beautiful" action="https://httpbin.org/post" method="post">
-        <div class="form-column">
-            <h1>Ваш заказ</h1>
-            <label for="soup">Суп</label>
-            <select id="soup" name="soup">
-                <option value="" disabled selected>--Выберите суп--</option>
-                <option value="warm">Теплый, 7 петабайт</option>
-                <option value="pumpkin">Тыквенный, 5 петабайт</option>
-                <option value="house">Из Семи Халуп, 10 петабайт</option>
-                <option value="skorb">Скоблянка Древнего Поля, 11 петабайт</option>
-                <option value="algorithm">Пищевой алгоритм №17, 15 петабайт</option>
-                <option value="3">Вакуумный борщ, 8 петабайт</option>
-            </select>
-
-            <label for="meal">Блюдо</label>
-            <select id="meal" name="meal">
-                <option value="" disabled selected>--Выберите блюдо--</option>
-                <option value="lapsha">Лапша с дымком, 6 петабайт</option>
-                <option value="plov">Плов "Переход", 9 петабайт</option>
-                <option value="road">Дом и дорога, 8 петабайт</option>
-                <option value="korni">Корни, 12 петабайт</option>
-                <option value="human_meat">Мясо из Никуда, 20 петабайт</option>
-                <option value="tongue">Язык Дипломата, 14 петабайт</option>
-            </select>
-
-            <label for="drink">Напиток</label>
-            <select id="drink" name="drink">
-                <option value="" disabled selected>--Выберите напиток--</option>
-                <option value="sbiten">Сбитень, 8 петабайт</option>
-                <option value="koren">Пенный корень, 11 петабайт</option>
-                <option value="water">Вода Прогалины, 4 петабайта</option>
-                <option value="fog">Тёплый туман, 7 петабайт</option>
-                <option value="ash">Зола и дым, 12 петабайт</option>
-                <option value="echo">Эхо перепоя, 17 петабайт</option>
-            </select>
-
-            <label for="salad">Салат</label>
-            <select id="salad" name="salad">
-                <option value="" disabled selected>--Выберите салат--</option>
-                <option value="meteor_mix">Метеоритный микс, 3 петабайт</option>
-                <option value="tension">Натяжение вкуса, 1 петабайт</option>
-                <option value="rootmix">Корневая смесь, 2 петабайт</option>
-                <option value="nightgreen">Ночная Зелень, 4 петабайт</option>
-                <option value="fieldbite">Полевая Жеванка, 3 петабайт</option>
-                <option value="wanderer">Салат Скитальца, 6 петабайт</option>
-            </select>
-
-            <label for="dessert">Десерт</label>
-            <select id="dessert" name="dessert">
-                <option value="" disabled selected>--Выберите десерт--</option>
-                <option value="zimka">Зимка, 9 петабайт</option>
-                <option value="pyra">Сахарная Пыра, 5 петабайт</option>
-                <option value="semki">Семечковая Нуга, 6 петабайт</option>
-                <option value="peremenka">Перемёнка, 8 петабайт</option>
-                <option value="pugovki">Пуговки, 7 петабайт</option>
-                <option value="provoloka">Сладкая Проволока, 7 петабайт</option>
-            </select>
-
-            <label for="comments">Комментарии к заказу</label>
-            <textarea id="comments" name="comments" rows="8" cols="50" placeholder=""></textarea>
-            <label>Стоимость заказа</label>
-            <div id="total">Общая стоимость: 0 петабайт</div>
-
-        </div>
-
-        <div class="form-column">
-            <h1>Ваши данные</h1>
-            <label for="name">Имя</label>
-            <input type="text" id="name" name="name" required></input>
-            <label for="email">Почта</label>
-            <input type="email" id="email" name="email" required></input>
-            <label style="font-size:16px; font-weight: normal; margin-bottom:0%"> <input type="checkbox" name="wants_delivery" value="yes" checked></input> Хочу получать информацию о скидках и акциях </label>
-            <label for="tel">Телефон</label>
-            <input type="tel" id="tel" name="tel" required></input>
-            <label for="email">Адрес доставки</label>
-            <input type="text" id="address" name="address" required></input>
-            <label for="">Время доставки:</label>
-            <label style="font-size:20px;
-            font-weight:normal;
-            margin-bottom: 0%;
-            margin-top: 0%;">
-                <input type="radio" name="delivery" value="rightnow" checked>
-                Прямо сейчас
-              </label>
-              <label style="font-size:20px;
-              font-weight:normal;
-              margin-bottom: 0%;
-              margin-top: 0%;">
-                <input type="radio" name="delivery" value="ontime">
-                В указанное временное сечение
-              </label>
-              <label for="delivery_time">Выбор временного сечения:</label>
-              <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300"></input>
-              <div class="scroller dark-theme">
-                <button type="reset">Сбросить</button>
-                <button id="openModal"  >Отправить</button>
-              </div>
-        </div>
-
-    </form>
 
     <footer id="contacts">
         <p>Позвонить нам: +7 495 325-45-22</p>
@@ -310,13 +208,83 @@
     
 
 
-    <!-- всплывающее окно -->
+    
     <div class="modal-overlay" id="modalOverlay">
+        <!-- всплывающее окно -->
         <div class="modal">
           <div id ="replacable-text" style = "margin-top:5%" class = "window-text">placeholder</div>
           <button class="close-button window-text" id="closeModal">OK Nerd   🚬🗿</button>
         </div>
-      </div>
+    </div>
+
+    <!-- окошко снизу с подсчетом стоимости -->
+    <div class="bottom-banner">
+        <span class="banner-text" id="total">Готов отправиться в Прогалину?</span>
+        <button class="banner-button" id = "openModal">В путь!</button>
+    </div>
+      
+
+    
+
+
+
+      <!-- я через это делал подсчет стоимости -->
+      <div class="form-column">
+        <h1>Ваш заказ</h1>
+        <label for="soup">Суп</label>
+        <select id="soup" name="soup">
+            <option value="" disabled selected>--Выберите суп--</option>
+            <option value="warm">Теплый, 7 петабайт</option>
+            <option value="pumpkin">Тыквенный, 5 петабайт</option>
+            <option value="house">Из Семи Халуп, 10 петабайт</option>
+            <option value="skorb">Скоблянка Древнего Поля, 11 петабайт</option>
+            <option value="algorithm">Пищевой алгоритм №17, 15 петабайт</option>
+            <option value="3">Вакуумный борщ, 8 петабайт</option>
+        </select>
+
+        <label for="meal">Блюдо</label>
+        <select id="meal" name="meal">
+            <option value="" disabled selected>--Выберите блюдо--</option>
+            <option value="lapsha">Лапша с дымком, 6 петабайт</option>
+            <option value="plov">Плов "Переход", 9 петабайт</option>
+            <option value="road">Дом и дорога, 8 петабайт</option>
+            <option value="korni">Корни, 12 петабайт</option>
+            <option value="human_meat">Мясо из Никуда, 20 петабайт</option>
+            <option value="tongue">Язык Дипломата, 14 петабайт</option>
+        </select>
+
+        <label for="drink">Напиток</label>
+        <select id="drink" name="drink">
+            <option value="" disabled selected>--Выберите напиток--</option>
+            <option value="sbiten">Сбитень, 8 петабайт</option>
+            <option value="koren">Пенный корень, 11 петабайт</option>
+            <option value="water">Вода Прогалины, 4 петабайта</option>
+            <option value="fog">Тёплый туман, 7 петабайт</option>
+            <option value="ash">Зола и дым, 12 петабайт</option>
+            <option value="echo">Эхо перепоя, 17 петабайт</option>
+        </select>
+
+        <label for="salad">Салат</label>
+        <select id="salad" name="salad">
+            <option value="" disabled selected>--Выберите салат--</option>
+            <option value="meteor_mix">Метеоритный микс, 3 петабайт</option>
+            <option value="tension">Натяжение вкуса, 1 петабайт</option>
+            <option value="rootmix">Корневая смесь, 2 петабайт</option>
+            <option value="nightgreen">Ночная Зелень, 4 петабайт</option>
+            <option value="fieldbite">Полевая Жеванка, 3 петабайт</option>
+            <option value="wanderer">Салат Скитальца, 6 петабайт</option>
+        </select>
+
+        <label for="dessert">Десерт</label>
+        <select id="dessert" name="dessert">
+            <option value="" disabled selected>--Выберите десерт--</option>
+            <option value="zimka">Зимка, 9 петабайт</option>
+            <option value="pyra">Сахарная Пыра, 5 петабайт</option>
+            <option value="semki">Семечковая Нуга, 6 петабайт</option>
+            <option value="peremenka">Перемёнка, 8 петабайт</option>
+            <option value="pugovki">Пуговки, 7 петабайт</option>
+            <option value="provoloka">Сладкая Проволока, 7 петабайт</option>
+        </select>
       
     <script src="scripts.js"></script>
 </body>

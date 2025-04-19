@@ -15,15 +15,36 @@ function renderDishes(dishes, containerId, chooseFunctionName, filter) {
                 <p class="p-order">${dish.desc}</p>
                 <a href="#" class="add" onclick="${chooseFunctionName}('${dish.keyword}'); return false;">Добавить</a>
             </div>
-        `   ;
+            `;
             container.insertAdjacentHTML('beforeend', dishHTML);
         }
     }
 }
 
+// начальный рендер без фильтров, массив берем из json файла с репозитория
+
+async function loadDishes() {
+    let response = await fetch('https://a-e-skald.github.io/progalina-web/meal_data.json');
+    let online_data = await response.json();
+
+    soups = online_data.soups;
+    meals = online_data.meals;
+    drinks = online_data.drinks;
+    salads = online_data.salads;
+    desserts = online_data.desserts;
+
+    renderDishes(soups, "soups", "chooseSoup", null);
+    renderDishes(meals, "meals", "chooseMeal", null);
+    renderDishes(drinks, "drinks", "chooseDrink", null);
+    renderDishes(salads, "salads", "chooseSalad", null);
+    renderDishes(desserts, "desserts", "chooseDessert", null);
+}
+
 //рассчет стоимости
 
 function calculateTotal() {
+    console.log(soups);
+
     const soupValue = document.getElementById("soup").value;
     const mealValue = document.getElementById("meal").value;
     const drinkValue = document.getElementById("drink").value;
@@ -33,6 +54,8 @@ function calculateTotal() {
     function findDish(arr, keyword) {
         return arr.find(dish => dish.keyword === keyword);
     }
+
+    console.log(soups);
 
     const soup = findDish(soups, soupValue);
     const meal = findDish(meals, mealValue);
@@ -48,29 +71,16 @@ function calculateTotal() {
     if (dessert) total += dessert.price;
 
     document.getElementById("total").innerText = "Общая стоимость: " + total + " петабайт";
-    
 }
 
-// начальный рендер без фильтров, массив берем из json файла с репозитория
-
-async function loadDishes() {
-        let response = await fetch('https://a-e-skald.github.io/progalina-web/meal_data.json');
-        let online_data = await response.json();
-
-        const soups = online_data.soups;
-        const meals = online_data.meals;
-        const drinks = online_data.drinks;
-        const salads = online_data.salads;
-        const desserts = online_data.desserts;
-
-        renderDishes(soups, "soups", "chooseSoup", null);
-        renderDishes(meals, "meals", "chooseMeal", null);
-        renderDishes(drinks, "drinks", "chooseDrink", null);
-        renderDishes(salads, "salads", "chooseSalad", null);
-        renderDishes(desserts, "desserts", "chooseDessert", null);
-}
+soups = null;
+meals = null;
+drinks = null;
+salads = null;
+desserts = null;
 
 loadDishes();
+
 
 // чтобы при нажатии кнопки добавить в выпадающем списке выбиралась опция
 
@@ -82,45 +92,56 @@ document.getElementById("dessert").addEventListener("change", calculateTotal);
 
 // для работы кнопок с фильтром
 
-const buttons = document.getElementsByClassName("filter");
-const dict_func = {
-    soups: "chooseSoup",
-    meals: "chooseMeal",
-    drinks: "chooseDrink",
-    salads: "chooseSalad",
-    desserts: "chooseDessert",
-}
-const data = {
-    soups: soups,
-    meals: meals,
-    drinks: drinks,
-    salads: salads,
-    desserts: desserts,
-}
-for (let button of buttons) {
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
-        const button_category = button.parentElement.dataset.category;
-        const arr_name = data[button_category];
-        const kind = button.dataset.kind;
-        const func_name = dict_func[button_category];
-        
-        if (button.classList.contains("active")) {
-            button.classList.remove("active");
-            renderDishes(arr_name, button_category, func_name, null);
-        }
-        else {
-            const parent = button.closest(".filters");
-            const allButtons = parent.querySelectorAll(".filter");
-            allButtons.forEach(b => b.classList.remove("active"));
+async function main() {
+    await loadDishes(); // мне нужны значения массива который подгружается в loadDishes
+    const buttons = document.getElementsByClassName("filter");
+    const dict_func = {
+        soups: "chooseSoup",
+        meals: "chooseMeal",
+        drinks: "chooseDrink",
+        salads: "chooseSalad",
+        desserts: "chooseDessert",
+    }
 
-            button.classList.add("active");
-            renderDishes(arr_name, button_category, func_name, kind);
-        }
+    const data = {
+        'soups': soups,
+        'meals': meals,
+        'drinks': drinks,
+        'salads': salads,
+        'desserts': desserts,
+    }
 
-    });
-    
-}
+    for (let button of buttons) {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const button_category = button.parentElement.dataset.category;
+            const arr_name = data[button_category];
+            const kind = button.dataset.kind;
+            const func_name = dict_func[button_category];
+
+            console.log(data);
+
+            if (button.classList.contains("active")) {
+                button.classList.remove("active");
+                renderDishes(arr_name, button_category, func_name, null);
+            }
+            else {
+                const parent = button.closest(".filters");
+                const allButtons = parent.querySelectorAll(".filter");
+                allButtons.forEach(b => b.classList.remove("active"));
+
+                button.classList.add("active");
+                renderDishes(arr_name, button_category, func_name, kind);
+            }
+
+        });
+
+    }
+    }
+
+main();
+
+
 
 // для работы окна с уведомлением 
 
@@ -129,12 +150,12 @@ const closeBtn = document.getElementById('closeModal');
 const overlay = document.getElementById('modalOverlay');
 
 openBtn.addEventListener('click', () => {
-
-    const soupBin = (!document.getElementById("soup").value == "");
-    const mealBin = (!document.getElementById("meal").value == "");
-    const drinkBin = (!document.getElementById("drink").value == "");
-    const saladBin = (!document.getElementById("salad").value == "");
-    const dessertBin = (!document.getElementById("dessert").value == "");
+    const keywords = [document.getElementById("soup").value, document.getElementById("meal").value, document.getElementById("drink").value, document.getElementById("salad").value, document.getElementById("dessert").value];
+    const soupBin = (!keywords[0] == "");
+    const mealBin = (!keywords[1] == "");
+    const drinkBin = (!keywords[2] == "");
+    const saladBin = (!keywords[3] == "");
+    const dessertBin = (!keywords[4] == "");
 
     console.log(soupBin,mealBin,drinkBin,saladBin,dessertBin);
     console.log((soupBin && !mealBin) , (soupBin && !saladBin));
@@ -166,7 +187,8 @@ openBtn.addEventListener('click', () => {
     }
 
     else {
-        document.getElementByClassName('form-beautiful')[0].submit();   
+        localStorage.setItem("chosenKeywords", JSON.stringify(keywords));
+        window.location.href = "form order.html";
     }
 });
 
