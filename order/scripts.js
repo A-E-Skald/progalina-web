@@ -1,25 +1,4 @@
-// чтобы при нажатии кнопки добавить в выпадающем списке выбиралась опция
 
-function chooseSoup(value) {
-    document.getElementById('soup').value = value;
-    calculateTotal();
-}
-function chooseMeal(value) {
-    document.getElementById('meal').value = value;
-    calculateTotal();
-}
-function chooseDrink(value) {
-    document.getElementById('drink').value = value;
-    calculateTotal();
-}
-function chooseSalad(value) {
-    document.getElementById('salad').value = value;
-    calculateTotal();
-}
-function chooseDessert(value) {
-    document.getElementById('dessert').value = value;
-    calculateTotal();
-}
 
 // вывод (с фильтром или без)
 

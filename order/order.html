@@ -8,22 +8,27 @@
 
     <script>
         function chooseSoup(value) {
+            event.preventDefault();
             document.getElementById('soup').value = value;
             calculateTotal();
         }
         function chooseMeal(value) {
+            event.preventDefault();
             document.getElementById('meal').value = value;
             calculateTotal();
         }
         function chooseDrink(value) {
+            event.preventDefault();
             document.getElementById('drink').value = value;
             calculateTotal();
         }
         function chooseSalad(value) {
+            event.preventDefault();
             document.getElementById('salad').value = value;
             calculateTotal();
         }
         function chooseDessert(value) {
+            event.preventDefault();
             document.getElementById('dessert').value = value;
             calculateTotal();
         }
