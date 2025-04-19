@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap">
+
+    <script>
+        function chooseSoup(value) {
+            event.preventDefault();
+            document.getElementById('soup').value = value;
+            calculateTotal();
+        }
+        function chooseMeal(value) {
+            event.preventDefault();
+            document.getElementById('meal').value = value;
+            calculateTotal();
+        }
+        function chooseDrink(value) {
+            event.preventDefault();
+            document.getElementById('drink').value = value;
+            calculateTotal();
+        }
+        function chooseSalad(value) {
+            event.preventDefault();
+            document.getElementById('salad').value = value;
+            calculateTotal();
+        }
+        function chooseDessert(value) {
+            event.preventDefault();
+            document.getElementById('dessert').value = value;
+            calculateTotal();
+        }
+        
+    </script>
+
+    <title>Прогалина</title>
+</head>
+<body class = "dark-theme">
+    <header>
+        <a class = "a-nostyle" href="../header.html"><h1>Прогалина</h1></a>
+        <nav>
+            <a class = "a-nostyle" href="/order/order.html">Собрать трапезу</a>
+            <a class = "a-nostyle" style="color:rgb(227, 173, 112)" href="/order/form order.html">Оформить заказ</a>
+            <a class = "a-nostyle" href=" ">Заказы</a>
+        </nav>
+    </header>
+    <main>
+
+       <!-- выбранные блюд -->
+        <section>
+            <h2 style = "margin-top:5%;">Выбранные блюда</h2>
+            
+            <div id="dishes" class="scroller">
+                
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- форма -->
+
+    <form class = "form-beautiful" style="display: flex;">
+        <div id = "renderList" class="form-column" style="display: flex;">
+
+        </div>
+
+        <div><h2>Оформление заказа</h2></div>
+        <div class="form-column" style="display: flex;">
+            <h1>Ваши данные</h1>
+            <label for="name">Имя</label>
+            <input type="text" id="name" name="name" required></input>
+            <label for="email">Почта</label>
+            <input type="email" id="email" name="email" required></input>
+            <label style="font-size:16px; font-weight: normal; margin-bottom:0%"> <input type="checkbox" name="wants_delivery" value="yes" checked></input> Хочу получать информацию о скидках и акциях </label>
+            <label for="tel">Телефон</label>
+            <input type="tel" id="tel" name="tel" required></input>
+            <label for="email">Адрес доставки</label>
+            <input type="text" id="address" name="address" required></input>
+            <label for="">Время доставки:</label>
+            <label style="font-size:20px;
+            font-weight:normal;
+            margin-bottom: 0%;
+            margin-top: 0%;">
+                <input type="radio" name="delivery" value="rightnow" checked>
+                Прямо сейчас
+              </label>
+              <label style="font-size:20px;
+              font-weight:normal;
+              margin-bottom: 0%;
+              margin-top: 0%;">
+                <input type="radio" name="delivery" value="ontime">
+                В указанное временное сечение
+              </label>
+              <label for="delivery_time">Выбор временного сечения:</label>
+              <input type="time" id="delivery_time" name="delivery_time" min="07:00" max="23:00" step="300"></input>
+              <div class="scroller dark-theme">
+                <button type="reset">Сбросить</button>
+                <button type="button" id="openModal">Отправить</button>
+              </div>
+        </div>
+
+    </form>
+
+    <footer id="contacts">
+        <p>Позвонить нам: +7 495 325-45-22</p>
+    </footer>
+    
+
+
+
+
+
+    <script src="/order/meal_data.js"></script>
+    <script src="/order/form-scripts.js"></script>
+</body>
+
+</html>
