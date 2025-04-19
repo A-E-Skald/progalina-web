@@ -1,5 +1,3 @@
-
-
 // вывод (с фильтром или без)
 
 function renderDishes(dishes, containerId, chooseFunctionName, filter) {
@@ -21,10 +19,10 @@ function renderDishes(dishes, containerId, chooseFunctionName, filter) {
     }
 }
 
-// начальный рендер без фильтров, массив берем из json файла с репозитория
+// начальный рендер без фильтров, массив берем из json файла с репозитория по заданию из лабы
 
 async function loadDishes() {
-    let response = await fetch('https://a-e-skald.github.io/progalina-web/meal_data.json');
+    let response = await fetch('https://a-e-skald.github.io/progalina-web/files/meal_data.json');
     let online_data = await response.json();
 
     soups = online_data.soups;

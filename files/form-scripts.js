@@ -1,6 +1,6 @@
 function renderDishes() {
     const container = document.getElementById('dishes');
-    allLists = [soups, meals, drinks, salads, desserts];
+
     console.log(allKeys);
 
     container.innerHTML = "";
@@ -27,6 +27,16 @@ function findDict(keyword) {
         for (let dish of dishlist) {
             if (keyword==dish.keyword) {
                 return(dish);
+            }
+        }
+    }
+}
+
+function findID(keyword) {
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 6; j++) {
+            if (keyword==allLists[i][j].keyword) {
+                return(i*6+j+1);
             }
         }
     }
@@ -115,19 +125,15 @@ async function sendOrder() {
         delivery_type: deliveryType,
         comment: comment,
         subscribe: subscribe,
-        // soup_id: allKeys[0],
-        // meal_id: allKeys[1],
-        // salad_id: allKeys[2],
-        // drink_id: allKeys[3],
-        // dessert_id: allKeys[4]
-        soup_id: 1,
-        meal_id: 11,
-        salad_id: 111,
-        drink_id: 1111,
-        dessert_id: 11111,
+        soup_id: findID(allKeys[0]),
+        main_course_id: findID(allKeys[1]),
+        salad_id: findID(allKeys[3]),
+        drink_id: findID(allKeys[2]),
+        dessert_id: findID(allKeys[4])
     };
 
     console.log(orderData);
+    console.log(findID(allKeys[0]), findID(allKeys[1]), findID(allKeys[2]), findID(allKeys[3]), findID(allKeys[4]));
 
     try {
         const response = await fetch(apiUrl, {
@@ -153,32 +159,14 @@ async function sendOrder() {
 }
 
 const allKeys = JSON.parse(localStorage.getItem("chosenKeywords"));
+allLists = [soups, meals, salads,  drinks, desserts];
 
 renderDishes();
 renderList();
+
 
 document.getElementById("openModal").addEventListener("click", function(event) {
     event.preventDefault(); 
     sendOrder(); 
 });
-
-async function checkOrders() {
-    const apiKey = "cff8ac16-8306-46e8-92c0-02dbd4dd28bd";
-
-    try {
-        const response = await fetch(`https://edu.std-900.ist.mospolytech.ru/labs/api/orders?api_key=${apiKey}`);
-        
-        if (!response.ok) {
-            throw new Error("Ошибка при получении заказов");
-        }
-
-        const orders = await response.json();
-        console.log("Ваши заказы:", orders);
-    } catch (error) {
-        console.error("Не удалось получить заказы:", error);
-        alert("Ошибка при загрузке заказов");
-    }
-}
-
-checkOrders();
 
