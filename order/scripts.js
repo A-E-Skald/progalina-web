@@ -72,13 +72,26 @@ function calculateTotal() {
     
 }
 
-// начальный рендер без фильтров
+// начальный рендер без фильтров, массив берем из json файла с репозитория
 
-renderDishes(soups, "soups", "chooseSoup", null);
-renderDishes(meals, "meals", "chooseMeal", null); 
-renderDishes(drinks, "drinks", "chooseDrink", null);
-renderDishes(salads, "salads", "chooseSalad", null);
-renderDishes(desserts, "desserts", "chooseDessert", null); 
+async function loadDishes() {
+        let response = await fetch('https://a-e-skald.github.io/progalina-web/meal_data.json');
+        let online_data = await response.json();
+
+        const soups = online_data.soups;
+        const meals = online_data.meals;
+        const drinks = online_data.drinks;
+        const salads = online_data.salads;
+        const desserts = online_data.desserts;
+
+        renderDishes(soups, "soups", "chooseSoup", null);
+        renderDishes(meals, "meals", "chooseMeal", null);
+        renderDishes(drinks, "drinks", "chooseDrink", null);
+        renderDishes(salads, "salads", "chooseSalad", null);
+        renderDishes(desserts, "desserts", "chooseDessert", null);
+}
+
+loadDishes();
 
 // чтобы при нажатии кнопки добавить в выпадающем списке выбиралась опция
 
