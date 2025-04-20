@@ -446,6 +446,7 @@
     }
 
     .scroller {
+        width: 100%;
         display: flex;
         overflow-x: auto;
         gap: 6%; 
@@ -503,7 +504,7 @@
         margin-left: 5%;
         display: flex;
         flex-direction: row;
-        width: 500px;
+        width: 100%;
         flex-wrap:nowrap;
     }
 
@@ -511,7 +512,7 @@
         display: flex;
         flex-direction: column;
         align-content: flex-start;
-        max-width: 400px;
+        width: 100%;
     }
     
     .tabled {
@@ -526,6 +527,13 @@
     .tiny-block {
 
         margin: 0%;
+    }
+
+    .timyimg:hover {
+        transform: scale(0.3) translateY(-0px);
+        margin:-15%;
+        padding:-15%;
+
     }
 }
 
